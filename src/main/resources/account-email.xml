@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-3.2.9.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:service.properties" />
@@ -25,6 +25,6 @@
     <bean id="accountEmailService"
           class="com.juvenxu.mvnbook.account.email.AccountEmailServiceImpl">
         <property name="javaMailSender" ref="javaMailSender" />
-        <property name="systemEmail" ref="${email.systemEmail}" />
+        <property name="systemEmail" value="${email.systemEmail}" />
     </bean>
 </beans>
